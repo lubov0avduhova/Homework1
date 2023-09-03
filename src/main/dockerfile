@@ -1,0 +1,8 @@
+FROM bellsoft/liberica-openjdk-alpine
+
+COPY ./java ./src
+RUN mkdir ./out
+
+RUN javac -encoding utf8 -sourcepath ./src -d out src/avduhova/lubov/sample/Main.java
+CMD java -classpath ./out avduhova.lubov.sample.Main
+
